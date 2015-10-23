@@ -11,7 +11,7 @@ $base-font-size:   16px;
 $small-font-size:  $base-font-size * 0.875;
 $base-line-height: 1.5;
 
-$spacing-unit:     30px;
+$spacing-unit:     32px;
 
 $text-color:       #111;
 $background-color: #fdfdfd;
@@ -47,3 +47,29 @@ $on-laptop:        800px;
         "layout",
         "syntax-highlighting"
 ;
+
+body {
+    background: $grey-color-dark;
+}
+
+.page-content {
+    padding-bottom: 0px;
+}
+
+.site-footer {
+    padding: 0px;
+    border-top: 0px;
+}
+
+.wrapper { 
+   padding-top: $spacing-unit;
+    background: $background-color;
+    border-radius: $spacing-unit $spacing-unit 0px 0px;
+}
+
+.wrapper2 {
+    @extend .wrapper;
+    padding-top: $spacing-unit/2;
+    border-radius: 0px 0px $spacing-unit $spacing-unit;
+    background: $grey-color-light;
+}
