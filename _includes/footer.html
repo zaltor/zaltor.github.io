@@ -5,15 +5,20 @@
 <!--
     <h2 class="footer-heading">{{ site.title }}</h2>
 -->
-<!--
       <div class="trigger">
+        {% assign firstitem = 0 %}
         {% for page in site.pages %}
           {% if page.title %}
-          <a class="page-link" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
+            {% if firstitem == 0 %}
+              {% assign firstitem = 1 %}
+            {% else %}
+              &nbsp; | &nbsp;
+            {% endif %}
+            <a class="page-link" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
           {% endif %}
         {% endfor %}
       </div>
--->
+
     <div class="footer-col-wrapper">
       <div class="footer-col  footer-col-1">
         <ul class="contact-list">
@@ -35,6 +40,7 @@
 
               <span class="username">{{ site.github_username }}</span>
             </a>
+            @ GitHub
           </li>
           {% endif %}
 
@@ -50,6 +56,7 @@
 
               <span class="username">{{ site.twitter_username }}</span>
             </a>
+            @ Twitter
           </li>
           {% endif %}
         </ul>

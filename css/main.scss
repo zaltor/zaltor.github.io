@@ -62,7 +62,7 @@ body {
 }
 
 .wrapper { 
-   padding-top: $spacing-unit;
+    padding-top: $spacing-unit;
     background: $background-color;
     border-radius: $spacing-unit $spacing-unit 0px 0px;
 }
@@ -70,6 +70,24 @@ body {
 .wrapper2 {
     @extend .wrapper;
     padding-top: $spacing-unit/2;
+    margin-bottom: $spacing-unit;
     border-radius: 0px 0px $spacing-unit $spacing-unit;
     background: $grey-color-light;
+}
+
+.trigger {
+    margin-bottom: $spacing-unit/2;
+}
+
+.trigger a.page-link {
+    font-weight: bold;
+
+    &:visited {
+        color: $brand-color;
+    }
+
+    &:hover {
+        color: $text-color;
+        text-decoration: none;
+    }
 }
