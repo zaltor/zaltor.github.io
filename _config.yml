@@ -5,7 +5,7 @@ description: > # this means to ignore newlines until "baseurl:"
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://profile.zaltor.net" # the base hostname & protocol for your site
 # twitter_username: jekyllrb
-github_username:  zaltor
+github_username: zaltor
 
 exclude: [Gemfile]
 

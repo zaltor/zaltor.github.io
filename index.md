@@ -40,6 +40,8 @@ Selected Publications
  * Z. Zhang, [*Analysis and synthesis of three-dimensional illumination using partial coherence*,](http://purl.stanford.edu/vn229hj9775) Ph.D. dissertation, Stanford University (2011)
  * Z. Zhang, and M. Levoy, ["Wigner distributions and how they relate to the light field,"](http://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=5559007&isnumber=5559002) in *Computational Photography (ICCP), 2009 IEEE International Conference on*, 1--10 (2009)
 
+*For more publications, please see my [Google Scholar profile](https://scholar.google.com/citations?user=0Eo626QAAAAJ).*
+
 Software
 ========
 
