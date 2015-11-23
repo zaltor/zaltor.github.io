@@ -6,6 +6,7 @@
 
 
 // Our variables
+$base-max-width:   1024px;
 $base-font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
 $base-font-size:   16px;
 $small-font-size:  $base-font-size * 0.875;
@@ -19,6 +20,7 @@ $brand-color:      #2a7ae2;
 
 $grey-color:       #828282;
 $grey-color-light: lighten($grey-color, 40%);
+$grey-color-verylight: lighten($grey-color, 45%);
 $grey-color-dark:  darken($grey-color, 25%);
 
 $on-palm:          600px;
@@ -90,4 +92,93 @@ body {
         color: $text-color;
         text-decoration: none;
     }
+}
+
+hr.section {
+    border: 0; 
+    height: 1px;
+    margin-top: $spacing-unit/4;
+    margin-bottom: $spacing-unit/2;
+    background-image: -webkit-linear-gradient(left, $text-color, $background-color);
+    background-image: -moz-linear-gradient(left, $text-color, $background-color);
+    background-image: -ms-linear-gradient(left, $text-color, $background-color);
+    background-image: -o-linear-gradient(left, $text-color, $background-color); 
+}
+
+hr.menu {
+    border: 0; 
+    height: 1px;
+    margin-top: $spacing-unit/4;
+    margin-bottom: $spacing-unit/4;
+    background-image: -webkit-linear-gradient(left, $grey-color-light, $text-color);
+    background-image: -moz-linear-gradient(left, $grey-color-light, $text-color);
+    background-image: -ms-linear-gradient(left, $grey-color-light, $text-color);
+    background-image: -o-linear-gradient(left, $grey-color-light, $text-color); 
+}
+
+div#menu {
+    position: fixed;
+    width: 5*$spacing-unit;
+    margin-top: $spacing-unit/8;
+    margin-right: $spacing-unit/2;
+    padding: $spacing-unit/2;
+    background: $grey-color-light;
+    border-radius: $spacing-unit/4;
+    background-image: -webkit-linear-gradient(top, $grey-color-light, $background-color);
+    background-image: -moz-linear-gradient(top, $grey-color-light, $background-color);
+    background-image: -ms-linear-gradient(top, $grey-color-light, $background-color);
+    background-image: -o-linear-gradient(top, $grey-color-light, $background-color); 
+}
+
+div.address {
+    font-size: 75%;
+}
+
+h1.name {
+    font-variant: small-caps;
+    font-size: 125%;
+    padding: 0px;
+    margin: 0px;
+}
+
+div.menuportrait {
+    width: 5*$spacing-unit+2px;
+    height: 5*$spacing-unit+2px;
+    margin-bottom: $spacing-unit/4;
+    background-image: -webkit-linear-gradient(300deg, $grey-color-light, $text-color);
+    background-image: -moz-linear-gradient(300deg, $grey-color-light, $text-color);
+    background-image: -ms-linear-gradient(300deg, $grey-color-light, $text-color);
+    background-image: -o-linear-gradient(300deg, $grey-color-light, $text-color); 
+}
+
+div.menuportrait img {
+    width: 5*$spacing-unit;
+    height: 5*$spacing-unit;
+    margin: 1px;
+}
+
+div#menu ul.menu {
+    text-align: right;
+    margin-left: 0px;
+}
+
+div#menu li {
+    display: block;
+}
+
+div#body {
+    padding-left: 6.5*$spacing-unit;
+    height: 100%;
+}
+
+ul.bibliography li {
+    padding: $spacing-unit/8;
+    border-radius: $spacing-unit/8;
+}
+
+ul.bibliography li:hover {
+    background-image: -webkit-linear-gradient(left, $grey-color-verylight, $background-color);
+    background-image: -moz-linear-gradient(left, $grey-color-verylight, $background-color);
+    background-image: -ms-linear-gradient(left, $grey-color-verylight, $background-color);
+    background-image: -o-linear-gradient(left, $grey-color-verylight, $background-color); 
 }
