@@ -150,7 +150,6 @@ pre {
     max-width:         calc(#{$base-max-width} - (#{$spacing-unit} * 2));
     margin-right: auto;
     margin-left: auto;
-//    margin-left: $spacing-unit;
     padding-right: $spacing-unit;
     padding-left: $spacing-unit;
     @extend %clearfix;
