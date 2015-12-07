@@ -1,0 +1,123 @@
+---
+layout: research
+title: Coherence Retrieval (Phase Space Tomography)
+description: information carried by a partially coherent light beam is embedded in the two-point field correlation of a cross section.  Recovery of this information (e.g. of the mutual intensity or its phase space brethren) is called coherence retrieval or phase space tomography and requires solving an inverse problem based on measurements of the beam through known optical systems.  Measurement system design and algorithms are open problems.
+---
+
+<p>
+By capturing the amplitude and phase profile at the cross section of a
+coherent light beam, we can predict its behavior at a macroscopic time
+scale when traversing known optical systems.  Such is the basis for
+holography, where a coherent field can be <em>recorded</em>, and then
+reconstructed physically or propagated digitally.  However, most light
+we encounter everyday is not coherent, but rather <em>partially
+coherent</em>, and hence simply the amplitude and phase is not enough
+to capture the information contained in such beams; in fact, phase has
+no defined value in a partially coherent beam as it is stochastically
+varying.  What <em>is</em> sufficient is a recording of the two-point
+correlation of the field&mdash;for the polychromatic case, this
+information is contained in the mutual coherence function or cross
+spectral density, and for the quasimonochromatic case, this
+information is given by the mutual intensity or phase space
+representations such as the Wigner distribution or the ambiguity
+function.
+</p>
+
+<figure>
+<a href="coherence_retrieval.png"><img src="coherence_retrieval.png" alt="Illustration of coherence retrieval" /></a>
+<figcaption>Coherence retrieval can be used to compute the
+mutual intensity (b) of a partially coherent beam from a measured
+focal stack (a). Once computed, the mutual intensity can then be
+computationally propagated through arbitrary optical systems to
+generate for example an extended focal stack (c) or a focal stack
+of the same beam propagated through an aberrated system (d).</figcaption>
+</figure>
+
+<p>
+Although we are interested in a correlation function, the standard
+signal processing method of estimating correlation using measurements
+of many realizations is not feasible for most optical applications,
+because the oscillations of the electromagnetic field are much too
+fast for any currently available apparatus to capture directly.
+What <em>can</em> be measured is time-averaged intensity of the field
+in question, perhaps after it has propagated through some linear
+optical system(s) of our own choosing.  We can then estimate the
+correlation function by solving an inverse problem based on these
+measurements, in a process called <strong><em>coherence
+retrieval</em></strong> or <strong><em>phase space
+tomography</em></strong>.  The latter term derives from the fact that
+intensity cross-sections of a partially coherent beam correspond to
+projections of the Wigner distribution or slices of the ambiguity
+function, and thus focal stacks or apparatuses with cylindrical lenses
+have been the focus of most of the physics literature.  In the geometric
+optics limit, phase space tomography
+becomes <a href="http://graphics.stanford.edu/projects/lightfield/">light
+field imaging</a>, which has recently spawned many sensing and
+illumination applications in the computer graphics literature.
+</p>
+
+<figure>
+<div style="text-align:center">
+<div style="display:inline-block; text-align:center; vertical-align:top; margin: 1em;">
+<em>(primal form)</em><br />
+$
+\begin{aligned}
+\underset{\vec{J}}{\arg\min}& \sum_{m=1}^M \sigma_m^{-2}\left(y_m - \vec{k}^{\mathsf H}_m \vec{J} \vec{k}_m\right)^2 \\
+\text{subject to } &\vec{J} \succeq \vec{0}
+\end{aligned}
+\quad
+$
+</div>
+<div style="display:inline-block; text-align:center; vertical-align:top; margin: 1em;">
+<em>(factored form)</em><br />
+$
+\quad
+\begin{aligned}
+&\underset{\vec{X}}{\arg\min} \sum_{m=1}^M \sigma_m^{-2}\left(y_m - \vec{k}^{\mathsf H}_m \vec{X}\vec{X}^{\mathsf H} \vec{k}_m\right)^2
+\end{aligned}
+$
+</div>
+</div>
+<figcaption>The primal form above is an inverse problem which asks for the mutual intensity $\vec J$ that, when propagated through known optical systems described by the $\vec k_m$ vectors, results in the smallest weighted error compared to the $M$ measured intensities given by the $y_m$s, assuming noise standard deviations specified by the $\sigma_m$s. One way to solve this constrained problem is to perform a factorization step, yielding a quartic function in $\vec X$, which is a generalized coherence modes decomposition of the mutual intensity.</figcaption>
+</figure>
+
+<p>
+We have formulated coherence retrieval as a constrained least squares
+problem that ensured results were physically valid while assuming
+weighted Gaussian measurement noise.  The formulation can be applied
+to any measurement system as long as the system impulse response is
+known and measurement noise can be adequately modeled as
+Gaussian.  A factorization approach was used to convert the
+formulation into an unconstrained problem, which could be solved using
+a nonlinear conjugate gradients algorithm called factored form
+descent.  We have used this approach to initially solve for the mutual
+intensity of a 1D Schell-model source, and current work includes
+adding regularizers and preconditioners to improve convergence,
+investigating new capture protocols to exploit the versatility of the
+formulation, and using recent state-of-the-art convex optimization
+approaches to solve this inverse problem.
+</p>
+
+<h3>Relevant Articles and Conference Proceedings</h3>
+
+<ul>
+<li>
+Zhengyun Zhang, and George Barbastathis, <a href="https://www.osapublishing.org/abstract.cfm?uri=COSI-2014-CW4C.4">"Regularizers for Coherence Retrieval and Their Physical Interpretation,"</a> in Classical Optics 2014, OSA Technical Digest (online) (Optical Society of America, 2014), paper CW4C.4
+</li>
+<li>
+Zhengyun Zhang, and George Barbastathis, <a href="https://www.osapublishing.org/abstract.cfm?uri=COSI-2013-CTu3C.4">"Compressive Effects of Positivity in Coherence Retrieval,"</a> in Imaging
+and Applied Optics, OSA Technical Digest (online) (Optical Society of America, 2013), paper
+CTu3C.4
+</li>
+<li>
+Lei Tian, Zhengyun Zhang, Jonathan C. Petruccelli, and George Barbastathis, <a href="https://www.osapublishing.org/oe/abstract.cfm?uri=oe-21-9-10511">"Wigner function measurement using a lenslet array,"</a> <em>Opt. Express</em> <strong>21</strong>, 10511&ndash;10525 (2013)
+</li>
+<li>
+Zhengyun Zhang, Zhi Chen, Shakil Rehman, and George Barbastathis, <a href="https://www.osapublishing.org/oe/abstract.cfm?uri=oe-21-5-5759">"Factored form descent: a practical algorithm for coherence retrieval,"</a> <em>Opt. Express</em> <strong>21</strong>, 5759&ndash;5780 (2013)
+</li>
+<li>
+Zhengyun Zhang, and Marc Levoy, <a href="http://graphics.stanford.edu/papers/lfwigner/">"Wigner distributions and how they relate to the light field,"</a> in <em>Computational Photography (ICCP), 2009 IEEE International Conference on</em>, 1&ndash;10 (2009)
+</li>
+</ul>
+
+<hr class="section"/>

@@ -3,16 +3,15 @@
 ---
 @charset "utf-8";
 
-
-
 // Our variables
 $base-max-width:   1024px;
 $base-font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
-$base-font-size:   16px;
+$base-font-size:   12px;
 $small-font-size:  $base-font-size * 0.875;
+$tiny-font-size:   $base-font-size * 0.6;
 $base-line-height: 1.5;
 
-$spacing-unit:     32px;
+$spacing-unit:     24px;
 
 $text-color:       #111;
 $background-color: #fdfdfd;
@@ -23,167 +22,20 @@ $grey-color-light: lighten($grey-color, 40%);
 $grey-color-verylight: lighten($grey-color, 45%);
 $grey-color-dark:  darken($grey-color, 25%);
 
-$on-palm:          600px;
-$on-laptop:        800px;
-
-
-
-// Using media queries with like this:
-// @include media-query($palm) {
-//     .wrapper {
-//         padding-right: $spacing-unit / 2;
-//         padding-left: $spacing-unit / 2;
-//     }
-// }
-@mixin media-query($device) {
-    @media screen and (max-width: $device) {
-        @content;
-    }
-}
-
-
+$mobile-cutoff:     640px;
 
 // Import partials from `sass_dir` (defaults to `_sass`)
-@import
-        "base",
-        "layout",
-        "syntax-highlighting"
-;
+@import "base", "layout";
 
-body {
-    background: $grey-color-dark;
-}
+// Syntax highlighting
+@import "syntax-highlighting";
 
-.page-content {
-    padding-bottom: 0px;
-}
+// Increase font size and spacing for large displays
 
-.site-footer {
-    padding: 0px;
-    border-top: 0px;
-}
-
-.wrapper { 
-    padding-top: $spacing-unit;
-    background: $background-color;
-    border-radius: $spacing-unit $spacing-unit 0px 0px;
-}
-
-.wrapper2 {
-    @extend .wrapper;
-    padding-top: $spacing-unit/2;
-    margin-bottom: $spacing-unit;
-    border-radius: 0px 0px $spacing-unit $spacing-unit;
-    background: $grey-color-light;
-}
-
-.trigger {
-    margin-bottom: $spacing-unit/2;
-}
-
-.trigger a.page-link {
-    font-weight: bold;
-
-    &:visited {
-        color: $brand-color;
-    }
-
-    &:hover {
-        color: $text-color;
-        text-decoration: none;
-    }
-}
-
-hr.section {
-    border: 0; 
-    height: 1px;
-    margin-top: $spacing-unit/4;
-    margin-bottom: $spacing-unit/2;
-    background-image: -webkit-linear-gradient(left, $text-color, $background-color);
-    background-image: -moz-linear-gradient(left, $text-color, $background-color);
-    background-image: -ms-linear-gradient(left, $text-color, $background-color);
-    background-image: -o-linear-gradient(left, $text-color, $background-color); 
-}
-
-hr.menu {
-    border: 0; 
-    height: 1px;
-    margin-top: $spacing-unit/4;
-    margin-bottom: $spacing-unit/4;
-    background-image: -webkit-linear-gradient(left, $grey-color-light, $text-color);
-    background-image: -moz-linear-gradient(left, $grey-color-light, $text-color);
-    background-image: -ms-linear-gradient(left, $grey-color-light, $text-color);
-    background-image: -o-linear-gradient(left, $grey-color-light, $text-color); 
-}
-
-div#menu {
-    position: fixed;
-    width: 5*$spacing-unit;
-    margin-top: $spacing-unit/8;
-    margin-right: $spacing-unit/2;
-    padding: $spacing-unit/2;
-    background: $grey-color-light;
-    border-radius: $spacing-unit/4;
-    background-image: -webkit-linear-gradient(top, $grey-color-light, $background-color);
-    background-image: -moz-linear-gradient(top, $grey-color-light, $background-color);
-    background-image: -ms-linear-gradient(top, $grey-color-light, $background-color);
-    background-image: -o-linear-gradient(top, $grey-color-light, $background-color); 
-}
-
-div.address {
-    font-size: 75%;
-}
-
-h1.name {
-    font-variant: small-caps;
-    font-size: 125%;
-    padding: 0px;
-    margin: 0px;
-}
-
-div.menuportrait {
-    width: 5*$spacing-unit+2px;
-    height: 5*$spacing-unit+2px;
-    margin-bottom: $spacing-unit/4;
-    background-image: -webkit-linear-gradient(300deg, $grey-color-light, $text-color);
-    background-image: -moz-linear-gradient(300deg, $grey-color-light, $text-color);
-    background-image: -ms-linear-gradient(300deg, $grey-color-light, $text-color);
-    background-image: -o-linear-gradient(300deg, $grey-color-light, $text-color); 
-}
-
-div.menuportrait img {
-    width: 5*$spacing-unit;
-    height: 5*$spacing-unit;
-    margin: 1px;
-}
-
-div#menu ul.menu {
-    text-align: right;
-    margin-left: 0px;
-}
-
-div#menu li {
-    display: block;
-}
-
-div#body {
-    padding-left: 6.5*$spacing-unit;
-    height: 100%;
-}
-
-ul.bibliography li {
-    padding: $spacing-unit/8;
-    border-radius: $spacing-unit/8;
-}
-
-ul.bibliography li:hover {
-    background-image: -webkit-linear-gradient(left, $grey-color-verylight, $background-color);
-    background-image: -moz-linear-gradient(left, $grey-color-verylight, $background-color);
-    background-image: -ms-linear-gradient(left, $grey-color-verylight, $background-color);
-    background-image: -o-linear-gradient(left, $grey-color-verylight, $background-color); 
-}
-
-div.disclaimer {
-    font-size: 75%;
-    font-style: italic;
+@media screen and (min-width: $mobile-cutoff) {
+    $base-font-size: 16px;
+    $small-font-size:  $base-font-size * 0.875;
+    $tiny-font-size:  $base-font-size * 0.6;
+    $spacing-unit: 32px;
+    @import "base", "layout";
 }

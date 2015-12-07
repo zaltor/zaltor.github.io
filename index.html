@@ -5,23 +5,32 @@ description: Professional profile for Zhengyun Zhang
 ---
 
 <div id="menu">
+<div class="menuportrait"><img src="documents/zhang-portrait.jpg" alt="Portrait" />
+</div>
+<div class="menuitems">
+<div class="name">Zhengyun Zhang</div>
+<hr class="menu" />
 <ul class="menu">
-<li><div class="menuportrait"><img src="documents/zhang-portrait.jpg" alt="Portrait" /></div></li>
-<li><h1 class="name">Zhengyun Zhang</h1><hr class="menu" /></li>
 <li><a href="#">Profile</a></li>
 <li><a href="#publications">Publications</a></li>
 <li><a href="#software">Software</a></li>
-<li><a href="#teaching">Teaching</a><hr class="menu"></li>
+<li><a href="#teaching">Teaching</a></li>
+</ul>
+<hr class="menu" />
+</div>
+<div class="menuitems">
+<ul class="menu">
 <li><a href="documents/zhengyun-zhang-cv.pdf">curriculum vitae</a></li>
 <li><a href="mailto:{{ site.email }}">contact via email</a></li>
 <li>mailing address:<div class="address">
-SMART Centre<br />
-BioSyM IRG<br />
+SMART Centre, BioSyM IRG<br />
 1 CREATE Way<br />
 #04-13/14 Enterprise Wing<br />
 Singapore 138602
 </div></li>
 </ul>
+<hr class="menu" />
+</div>
 </div>
 
 <div id="body">
@@ -39,10 +48,34 @@ optimization, phase space and three-dimensional display.
 
 <hr class="section" />
 
+<ul class="bibliography">
+<li>
+<a href="research/coherence.html">
+<img class="bibentry" alt="Coherence Retrieval (Phase Space Tomography)" src="research/coherence.jpg" />
+</a>
+<div class="bibentry"><a href="research/coherence.html"><strong>Coherence Retrieval (Phase Space Tomography)</strong></a>
+&mdash; information carried by a partially coherent light beam is
+embedded in the two-point field correlation of a cross section.  Recovery of this information (e.g. of the mutual intensity or its phase space brethren) is called <em>coherence retrieval</em> or <em>phase space tomography</em> and requires solving an inverse problem based on measurements of the beam through known optical systems.  Measurement system design and algorithms are open problems.
+</div>
+</li>
+<li>
+<a href="research/phase.html">
+<img class="bibentry" alt="Novel Computational Phase Imaging Techniques" src="research/hygg_phase.jpg" />
+</a>
+<div class="bibentry"><a href="research/phase.html"><strong>Novel Computational Phase Imaging Techniques</strong></a>
+&mdash; recent developments in optimization algorithms as well as increases in computing power enable novel phase imaging techniques based on solving inverse problems founded on rigorous physical principles. </div>
+</li>
+</ul>
+
+<hr class="section" />
+
 <h1 id="publications">Select Publications</h1>
 
 <ul class="bibliography">
 <li>
+<a href="https://www.osapublishing.org/ol/abstract.cfm?uri=ol-39-21-6177">
+<img class="bibentry" alt="Phase imaging using shifted wavefront sensor images" src="documents/zhang-2014-shifted-wavefront-sensor-phase-imaging.jpg" /> 
+</a>
 <div class="bibentry">
 Zhengyun Zhang, Zhi Chen, Shakil Rehman, and George Barbastathis, "Phase imaging using shifted wavefront sensor images," <em>Opt. Lett.</em> <strong>39</strong>, 6177&ndash;6180 (2014)
 </div>
@@ -51,14 +84,9 @@ Zhengyun Zhang, Zhi Chen, Shakil Rehman, and George Barbastathis, "Phase imaging
 [<a href="documents/zhang-2014-shifted-wavefront-sensor-phase-imaging.pdf">PDF</a>]
 </div></li>
 <li>
-<div class="bibentry">
-Yunhui Zhu, Zhengyun Zhang, and George Barbastathis, "Phase imaging for absorptive phase objects using hybrid uniform and structured illumination Transport of Intensity Equation," <em>Opt. Express</em> <strong>22</strong>, 28966&ndash;28976 (2014)
-</div>
-<div class="links">
-[<a href="https://www.osapublishing.org/oe/abstract.cfm?uri=oe-22-23-28966">Abstract</a>] 
-[<a href="documents/zhu-2014-absorptive-phase-objects-hybrid-imaging.pdf">PDF</a>]
-</div></li>
-<li>
+<a href="https://www.osapublishing.org/oe/abstract.cfm?uri=oe-21-9-10511">
+<img class="bibentry" alt="Wigner function measurement using a lenslet array" src="documents/tian-2013-wigner-lens-array.jpg" />
+</a>
 <div class="bibentry">
 Lei Tian, Zhengyun Zhang, Jonathan C. Petruccelli, and George Barbastathis, "Wigner function measurement using a lenslet array," <em>Opt. Express</em> <strong>21</strong>, 10511&ndash;10525 (2013)
 </div>
@@ -67,6 +95,9 @@ Lei Tian, Zhengyun Zhang, Jonathan C. Petruccelli, and George Barbastathis, "Wig
 [<a href="documents/tian-2013-wigner-lens-array.pdf">PDF</a>]
 </div></li>
 <li id="ffd">
+<a href="https://www.osapublishing.org/oe/abstract.cfm?uri=oe-21-5-5759">
+<img class="bibentry" alt="Factored form descent: a practical algorithm for coherence retrieval" src="documents/zhang-2013-factored-form-descent.jpg" />
+</a>
 <div class="bibentry">
 Zhengyun Zhang, Zhi Chen, Shakil Rehman, and George Barbastathis, "Factored form descent: a practical algorithm for coherence retrieval," <em>Opt. Express</em> <strong>21</strong>, 5759&ndash;5780 (2013)</div>
 <div class="links">
@@ -74,6 +105,9 @@ Zhengyun Zhang, Zhi Chen, Shakil Rehman, and George Barbastathis, "Factored form
 [<a href="documents/zhang-2013-factored-form-descent.pdf">PDF</a>]
 </div></li>
 <li>
+<a href="http://purl.stanford.edu/vn229hj9775">
+<img class="bibentry" alt="Analysis and synthesis of three-dimensional illumination using partial coherence" src="documents/zhang-thesis-20110825-augmented.jpg" />
+</a>
 <div class="bibentry">
 Zhengyun Zhang, <em>Analysis and synthesis of three-dimensional illumination using partial coherence</em>, Ph.D. dissertation, Stanford University (2011)</div>
 <div class="links">
@@ -81,6 +115,9 @@ Zhengyun Zhang, <em>Analysis and synthesis of three-dimensional illumination usi
 [<a href="documents/zhang-thesis-20110825-augmented.pdf">PDF</a>]
 </div></li>
 <li>
+<a href="http://graphics.stanford.edu/papers/lfwigner/">
+<img class="bibentry" alt="Wigner distributions and how they relate to the light field" src="documents/zhang-2009-light-field-wigner.jpg" />
+</a>
 <div class="bibentry">
 Zhengyun Zhang, and Marc Levoy, "Wigner distributions and how they relate to the light field," in <em>Computational Photography (ICCP), 2009 IEEE International Conference on</em>, 1&ndash;10 (2009)</div>
 <div class="links">
